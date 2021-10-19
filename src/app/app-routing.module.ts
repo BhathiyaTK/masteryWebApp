@@ -12,6 +12,7 @@ import { MyClassesComponent } from './dashboard/my-classes/my-classes.component'
 import { PurchaseClassComponent } from './dashboard/purchase-class/purchase-class.component';
 import { StdClassViewComponent } from './dashboard/std-class-view/std-class-view.component';
 import { TchrClassViewComponent } from './dashboard/tchr-class-view/tchr-class-view.component';
+import { TeacherCreateClassComponent } from './dashboard/teacher-create-class/teacher-create-class.component';
 import { UnavailableClassesComponent } from './dashboard/unavailable-classes/unavailable-classes.component';
 import { UserProfileComponent } from './dashboard/user-profile/user-profile.component';
 import { NoAccessComponent } from './error/no-access/no-access.component';
@@ -52,6 +53,7 @@ const routes: Routes = [
       { path: 'classes', component: AllClassesComponent, canActivate: [StudentGuard] },
       { path: 'my-classes/:id/:name', component: TchrClassViewComponent, canActivate: [TeacherGuard] },
       { path: 'my-classes', component: MyClassesComponent, canActivate: [TeacherGuard] },
+      { path: 'create-class', component: TeacherCreateClassComponent, canActivate: [TeacherGuard] },
       { path: 'dashboard', component: AdminDashboardComponent, canActivate: [AdminGuard] },
       { path: 'manage-classes', component: AdminManageClassesComponent, canActivate: [AdminGuard] },
       { path: 'manage-teachers', component: AdminManageTeachersComponent, canActivate: [AdminGuard] },

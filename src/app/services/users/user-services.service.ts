@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserServicesService {
+  getAllEmails() {
+    throw new Error('Method not implemented.');
+  }
 
   readonly APIUrl = "https://masterybackend.tk";
 
@@ -23,16 +26,16 @@ export class UserServicesService {
     return this.http.get(this.APIUrl + '/passwordforget/' + val, {responseType: 'text' as 'json'});
   }
 
-  public getAllUsers(): Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl + '/getAllUsers');
+  public getAllUserEmails(): Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl + '/filter/getAllUsersEmails');
   }
 
   public getTeachers(): Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl + '/admin/getAllTeachers');
+    return this.http.get<any[]>(this.APIUrl + '/filter/filterGetAllTeachers');
   }
 
   public getStudents(pageNo): Observable<any>{
-    return this.http.get<any>(this.APIUrl + '/getallstudents?pageNo='+ pageNo +'&pageSize=10');
+    return this.http.get<any>(this.APIUrl + '/getallstudents?pageNo='+ pageNo +'&pageSize=20');
   }
 
   public getSingleTeacher(userId, currentMonth): Observable<any>{

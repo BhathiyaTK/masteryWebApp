@@ -25,7 +25,7 @@ export class ClassesService {
   }
 
   addClass(val:any){
-    return this.http.post<any>(this.APIUrl + '/admin/newclass', val, {responseType: 'text' as 'json'});
+    return this.http.post<any>(this.APIUrl + '/tutionClass/newclass', val, {responseType: 'text' as 'json'});
   }
 
   updateClass(classId, val:any){

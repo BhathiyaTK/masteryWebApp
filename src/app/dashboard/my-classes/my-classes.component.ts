@@ -104,4 +104,11 @@ export class MyClassesComponent implements OnInit {
     }
   }
 
+  currencyConvertor(currency) {
+    var formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency', currency: 'LKR'
+    });
+    return formatter.format(currency);
+  }
+
 }
